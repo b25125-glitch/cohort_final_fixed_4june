@@ -476,7 +476,6 @@ CONSTRAINT PROFILE: Can be primary for: dual-action FW (acne + glow), simple acc
 
 COHORT 5 — BEAUTY ELITES
 SEC A1 | Age 26-40 | TAM: Rs 3705 cr | Per capita: Rs 9500
-Sub-segments: Moms and Without Kids. Specify when product fit differs.
 
 WHO SHE IS (BOTH): Skincare = mandatory maintenance, does it to feel confident. Wants to age gracefully. Ingredient knowledge not as deep as Informed Upgraders — judges on benefit claims not ingredients. Too many scientific jargons = lab product feel = avoided. Needs perfect naturals + science mix. Even when shifts to premium ayurveda, uses it at night and balances with actives in day.
 BEAUTY IDEAL: Flawless ageless skin that radiates from within. Healthy, dewy, soft and bouncy. Baby skin (equal, supple, spot-free) is universal benchmark. Good skin = not needing makeup. Anti-ageing = graceful ageing not reversal.
@@ -869,7 +868,6 @@ function renderResults(input,data){
   const sName = expData.sub_segment ? expData.cohort + " — " + expData.sub_segment : (expData.cohort || "-");
   document.getElementById("primaryName").textContent=pName;
   document.getElementById("primarySecAge").textContent=data.primary.sec_age;
-  document.getElementById("primaryTam").textContent="Market value "+data.primary.tam;
   const pR=document.getElementById("primaryReasons");pR.innerHTML="";
   (data.primary.reasons||[]).forEach(r=>{pR.innerHTML+=`<li><span class="reason-dot"></span><span>${r}</span></li>`});
   // Primary tweaks
@@ -882,7 +880,6 @@ function renderResults(input,data){
   } else { pTweaksLabel.style.display="none"; }
   document.getElementById("secondaryName").textContent=sName||"-";
   document.getElementById("secondarySecAge").textContent=expData.sec_age||"-";
-  document.getElementById("secondaryTam").textContent=expData.tam?"Market value "+expData.tam:"-";
   const sR=document.getElementById("secondaryReasons");sR.innerHTML="";
   (expData.reasons||[]).forEach(r=>{sR.innerHTML+=`<li><span class="reason-dot"></span><span>${r}</span></li>`});
   document.getElementById("whySecondary").textContent=expData.adoption_barrier||(expData.why_secondary_not_primary||"");
